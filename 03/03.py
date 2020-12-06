@@ -1,4 +1,3 @@
-
 def chargemap():
 	file_name = "input.txt"
 	file = open(file_name)
@@ -10,9 +9,6 @@ def chargemap():
 def isTree(lines,x,y):
 	patern_lignes = len(lines[0])
 	return "#" == lines[x][(y%(patern_lignes))] 
-
-#0-322 lignes
-
 
 
 def total_tree_Met(lines,co_ini,traj):
@@ -27,20 +23,11 @@ def total_tree_Met(lines,co_ini,traj):
 			acc = acc +1
 	return acc
 
-
-
 lines = chargemap()
-
-
-co_ini = [0,0]
-#down 1 right 3
-#tajectory = [1,3]
-
-#NumTreeMet = total_tree_Met(lines,co_ini,tajectory)
-#print(NumTreeMet)
 
 def totalTrees(trajectories):
 	results=[]
+	co_ini = [0,0]
 	for traj in trajectories:
 		NumTreeMet = total_tree_Met(lines,co_ini,traj)
 		results.append(NumTreeMet)
@@ -50,8 +37,3 @@ def totalTrees(trajectories):
 
 trajectories=[[1,1],[1,3],[1,5],[1,7],[2,1]]
 totalTrees(trajectories)
-#Right 1, down 1. 65
-#Right 3, down 1. (This is the slope you already checked.) 236
-#Right 5, down 1. 59
-#Right 7, down 1. 60
-#Right 1, down 2. 37
